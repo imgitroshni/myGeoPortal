@@ -287,6 +287,7 @@ overflow: scroll; */
   font-size: small;
   color: grey;
   margin: 10px 10px 0px 10px;
+  text-transform: capitalize;
 }
 
 .attQueryDiv label:nth-child(1) {
@@ -350,6 +351,7 @@ overflow: scroll; */
   font-size: small;
   color: grey;
   margin: 10px 10px 0px 10px;
+  text-transform: capitalize;
 }
 
 .multiAttQueryDiv label:nth-child(1) {
