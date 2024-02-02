@@ -69,7 +69,7 @@ header{
  position: absolute;
  z-index: 1;
  background: rgba(0, 0, 0, 0.5);
- height: 200px; width: 100%;
+ height: 208px; width: 100%;
  top: -40px;
  color: white;
  line-height: 1.6;
@@ -89,6 +89,13 @@ header{
  font-family: Georgia, serif;
  text-transform: capitalize;
   font-weight: normal;
+}
+
+marquee{
+  font-size: 13px;
+  text-transform: capitalize;
+  margin-top: 15px;
+  color: #9eee1d;
 }
 
 #nav-button {
@@ -258,14 +265,14 @@ nav ul .dropdown:hover > .table {
 overflow: scroll; */
 }
 
-#headerDiv {
+#queryHeaderDiv {
   background-color: midnightblue;
   height: 35px;
   padding-top: 6px;
   padding-left: 30px;
 }
 
-#headerDiv label {
+#queryHeaderDiv label {
   color: white;
 }
 .attQueryDiv select {
@@ -397,7 +404,7 @@ overflow: scroll; */
   .headerDiv{
     
    font-size: 25px;
-   height: 210px;
+   height: 216px;
    
   }
   
@@ -542,7 +549,8 @@ overflow: scroll; */
   .headerDiv{
     
     font-size: 18px;
-    height: 218px;
+    height: 203px;
+    top: -20px;
    }
    
    
@@ -555,6 +563,12 @@ overflow: scroll; */
      font-size: 15px;
     
    }
+
+   marquee{
+    font-size: 11px;
+    text-transform: capitalize;
+    margin-top: 50px;
+  }
   nav {
     width: 135px;
   }
@@ -585,8 +599,8 @@ overflow: scroll; */
   .headerDiv{
     
     font-size: 14px;
-    height: 222px;
-    
+    height: 205px;
+    top: -19px;
    }
    
    
