@@ -187,6 +187,8 @@ document.addEventListener(
   true
 );
 
+
+//BASEMAP ELEMENTS
 var Gaya_TMU = new ol.layer.Tile({
   source: new ol.source.TileWMS({
     url: "http://localhost:8080/geoserver/wms",
@@ -217,9 +219,172 @@ var Gaya_Slope = new ol.layer.Tile({
     params: { LAYERS: "NBSS_GeoServer:Gaya_Slope" },
   }),
 });
+
+//TERRAIN ELEMENTS
+var Terrain_Analytical_Hillshading = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_Analytical_Hillshading" },
+  }),
+});
+Terrain_Analytical_Hillshading.set("name", "Terrain_Analytical_Hillshading");
+
+var Terrain_Aspect = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_Aspect" },
+  }),
+});
+Terrain_Aspect.set("name", "Terrain_Aspect");
+
+var Terrain_Closed_Depressions = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_Closed_Depressions" },
+  }),
+});
+Terrain_Closed_Depressions.set("name", "Terrain_Closed_Depressions");
+
+var Terrain_CNBL = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_CNBL" },
+  }),
+});
+Terrain_CNBL.set("name", "Terrain_CNBL");
+
+var Terrain_CND = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_CND" },
+  }),
+});
+Terrain_CND.set("name", "Terrain_CND");
+
+var Terrain_Convergence_Index = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_Convergence_Index" },
+  }),
+});
+Terrain_Convergence_Index.set("name", "Terrain_Convergence_Index");
+
+var Terrain_Elevation = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_Elevation" },
+  }),
+});
+Terrain_Elevation.set("name", "Terrain_Elevation");
+
+var Terrain_LS_Factor = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_LS_Factor" },
+  }),
+});
+Terrain_LS_Factor.set("name", "Terrain_LS_Factor");
+
+var Terrain_MRRTF = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_MRRTF" },
+  }),
+});
+Terrain_MRRTF.set("name", "Terrain_MRRTF");
+
+var Terrain_MRVBF = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_MRVBF" },
+  }),
+});
+Terrain_MRVBF.set("name", "Terrain_MRVBF");
+
+var Terrain_Plan_Curvature = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_Plan_Curvature" },
+  }),
+});
+Terrain_Plan_Curvature.set("name", "Terrain_Plan_Curvature");
+
+var Terrain_Profile_Curvature = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_Profile_Curvature" },
+  }),
+});
+Terrain_Profile_Curvature.set("name", "Terrain_Profile_Curvature");
+
+var Terrain_RSP = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_RSP" },
+  }),
+});
+Terrain_RSP.set("name", "Terrain_RSP");
+
+var Terrain_Slope = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_Slope" },
+  }),
+});
+Terrain_Slope.set("name", "Terrain_Slope");
+
+var Terrain_Slope_Degree = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_Slope_Degree" },
+  }),
+});
+Terrain_Slope_Degree.set("name", "Terrain_Slope_Degree");
+
+var Terrain_Slope_Percentrise = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_Slope_Percentrise" },
+  }),
+});
+Terrain_Slope_Percentrise.set("name", "Terrain_Slope_Percentrise");
+
+var Terrain_Total_Catchment_Area = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_Total_Catchment_Area" },
+  }),
+});
+Terrain_Total_Catchment_Area.set("name", "Terrain_Total_Catchment_Area");
+
+var Terrain_TWI = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_TWI" },
+  }),
+});
+Terrain_TWI.set("name", "Terrain_TWI");
+
+var Terrain_Valley_Depth = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Terrain:Terrain_Valley_Depth" },
+  }),
+});
+Terrain_Valley_Depth.set("name", "Terrain_Valley_Depth");
+
+//SATELLITE ELEMENT
 Gaya_Slope.set("name", "Gaya_Slope");
 
-//FUNCTIONS
+var Gaya_Satellite = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer:Gaya_Satellite" },
+  }),
+});
+Gaya_Satellite.set("name", "Gaya_Satellite");
+
+//BASEMAP FUNCTIONS
 
 function Fun_Gaya_TMU() {
   var checkBox = document.getElementById("myCheck_Gaya");
@@ -269,6 +434,7 @@ function Fun_Gaya_Slope() {
   var checkBox = document.getElementById("myCheck_Gaya_Slope");
   if (checkBox.checked == true) {
     map.addLayer(Gaya_Slope);
+    
 
     //Gaya_Slope.getSource().updateParams({'cql_filter':"Slope='2'"});alert(1);
 
@@ -282,6 +448,292 @@ function Fun_Gaya_Slope() {
   myFunctionLigend();
 }
 
+//TERRAIN FUNCTIONS
+
+function Fun_Terrain_Analytical_Hillshading() {
+  var checkBox = document.getElementById("myCheck_Terrain_Analytical_Hillshading");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_Analytical_Hillshading);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_Analytical_Hillshading);
+  }
+}
+
+function Fun_Terrain_Aspect() {
+  var checkBox = document.getElementById("myCheck_Terrain_Aspect");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_Aspect);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_Aspect);
+  }
+}
+
+function Fun_Terrain_Closed_Depressions() {
+  var checkBox = document.getElementById("myCheck_Terrain_Closed_Depressions");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_Closed_Depressions);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_Closed_Depressions);
+  }
+}
+
+function Fun_Terrain_CNBL() {
+  var checkBox = document.getElementById("myCheck_Terrain_CNBL");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_CNBL);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_CNBL);
+  }
+}
+
+function Fun_Terrain_CND() {
+  var checkBox = document.getElementById("myCheck_Terrain_CND");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_CND);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_CND);
+  }
+}
+
+function Fun_Terrain_Convergence_Index() {
+  var checkBox = document.getElementById("myCheck_Terrain_Convergence_Index");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_Convergence_Index);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_Convergence_Index);
+  }
+}
+
+function Fun_Terrain_Elevation() {
+  var checkBox = document.getElementById("myCheck_Terrain_Elevation");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_Elevation);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_Elevation);
+  }
+}
+
+function Fun_Terrain_LS_Factor() {
+  var checkBox = document.getElementById("myCheck_Terrain_LS_Factor");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_LS_Factor);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_LS_Factor);
+  }
+}
+
+function Fun_Terrain_MRRTF() {
+  var checkBox = document.getElementById("myCheck_Terrain_MRRTF");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_MRRTF);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_MRRTF);
+  }
+}
+
+function Fun_Terrain_MRVBF() {
+  var checkBox = document.getElementById("myCheck_Terrain_MRVBF");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_MRVBF);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_MRVBF);
+  }
+}
+
+function Fun_Terrain_Plan_Curvature() {
+  var checkBox = document.getElementById("myCheck_Terrain_Plan_Curvature");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_Plan_Curvature);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_Plan_Curvature);
+  }
+}
+
+function Fun_Terrain_Profile_Curvature() {
+  var checkBox = document.getElementById("myCheck_Terrain_Profile_Curvature");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_Profile_Curvature);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_Profile_Curvature);
+  }
+}
+
+function Fun_Terrain_RSP() {
+  var checkBox = document.getElementById("myCheck_Terrain_RSP");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_RSP);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_RSP);
+  }
+}
+
+function Fun_Terrain_Slope() {
+  var checkBox = document.getElementById("myCheck_Terrain_Slope");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_Slope);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_Slope);
+  }
+}
+
+function Fun_Terrain_Slope_Degree() {
+  var checkBox = document.getElementById("myCheck_Terrain_Slope_Degree");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_Slope_Degree);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_Slope_Degree);
+  }
+}
+
+function Fun_Terrain_Slope_Percentrise() {
+  var checkBox = document.getElementById("myCheck_Terrain_Slope_Percentrise");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_Slope_Percentrise);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_Slope_Percentrise);
+  }
+}
+
+function Fun_Terrain_Total_Catchment_Area() {
+  var checkBox = document.getElementById("myCheck_Terrain_Total_Catchment_Area");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_Total_Catchment_Area);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_Total_Catchment_Area);
+  }
+}
+
+function Fun_Terrain_TWI() {
+  var checkBox = document.getElementById("myCheck_Terrain_TWI");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_TWI);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_TWI);
+  }
+  
+}
+
+function Fun_Terrain_Valley_Depth() {
+  var checkBox = document.getElementById("myCheck_Terrain_Valley_Depth");
+  if (checkBox.checked == true) {
+    map.addLayer(Terrain_Valley_Depth);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Terrain_Valley_Depth);
+  }
+}
+
+//SATELLITE FUNCTIONS
+function Fun_Gaya_Satellite() {
+  var checkBox = document.getElementById("myCheck_Gaya_Satellite");
+  if (checkBox.checked == true) {
+    map.addLayer(Gaya_Satellite);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Gaya_Satellite);
+  }
+}
+
+
+//MAP SWITCHER FUNCTIONS
 function Fun_Hybrid() {
   map.addLayer(googleLayerHybrid);
 
