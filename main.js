@@ -127,6 +127,40 @@ function myFunctionLigend() {
   });
 }
 
+function myFunctionLigendTerrain() {
+  document.getElementById("infoLigendTerrain").innerHTML = "";
+  var Div_Legend = document.getElementById("style_Legend");
+  Div_Legend.style.display = "none";
+  var lay = map.getLayers();
+
+  var url = "";
+  lay.forEach(function (layer, i, lay) {
+    if (layer.getVisible()) {
+      if (osm == layer || layer == googleLayerHybrid) {
+      } else {
+        Div_Legend.style.display = "block";
+        var xx = layer.get("name");
+
+        var opacity = layer.getOpacity();
+        opacity = opacity.toFixed(1);
+        var vvv = opacity / 0.1;
+
+        // document.getElementById("infoLigendTerrain").innerHTML += checkNameLigendNew(layer)+"<br><img src='http://localhost:8080/geoserver/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=10&HEIGHT=10&legend_options=fontName:Times%20New%20Roman;fontAntiAliasing:true;fontColor:0x000033;fontSize:10;bgColor:0xFFFFEE;dpi:180&LAYER=NBSS_GeoServer:"+xx+"'><br>";
+
+        document.getElementById("infoLigendTerrain").innerHTML =
+          checkNameLigendNew(layer) +
+          "<br><input class='slider' type='range' min='1' max='10' value=" +
+          vvv +
+          " id = " +
+          xx +
+          " onclick='sliderLisnerTerrain(this.value,this.id)'><br><img src='http://localhost:8080/geoserver/wms?Service=WMS&REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=10&HEIGHT=10&legend_options=fontName:Times%20New%20Roman;fontAntiAliasing:true;fontColor:0x000033;fontSize:10;bgColor:0xFFFFEE;dpi:180&LAYER=NBSS_GeoServer_Terrain:" +
+          xx +
+          "'><br>" +
+          document.getElementById("infoLigendTerrain").innerHTML;
+      }
+    }
+  });
+}
 function checkNameLigendNew(layerName) {
   layerName = layerName.get("name");
   return layerName;
@@ -141,6 +175,17 @@ function sliderLisner(val, layerN) {
     }
   });
   myFunctionLigend();
+}
+
+function sliderLisnerTerrain(val, layerN) {
+  var lay = map.getLayers();
+  lay.forEach(function (layer, i, lay) {
+    var xx = layer.get("name");
+    if (layerN == xx) {
+      layer.setOpacity(val * 0.1);
+    }
+  });
+  myFunctionLigendTerrain();
 }
 
 //====== Legend Mouse Move =============
@@ -462,6 +507,7 @@ function Fun_Terrain_Analytical_Hillshading() {
   } else {
     map.removeLayer(Terrain_Analytical_Hillshading);
   }
+  myFunctionLigendTerrain();
 }
 
 function Fun_Terrain_Aspect() {
@@ -476,6 +522,7 @@ function Fun_Terrain_Aspect() {
   } else {
     map.removeLayer(Terrain_Aspect);
   }
+  myFunctionLigendTerrain();
 }
 
 function Fun_Terrain_Closed_Depressions() {
@@ -490,6 +537,7 @@ function Fun_Terrain_Closed_Depressions() {
   } else {
     map.removeLayer(Terrain_Closed_Depressions);
   }
+  myFunctionLigendTerrain();
 }
 
 function Fun_Terrain_CNBL() {
@@ -504,6 +552,7 @@ function Fun_Terrain_CNBL() {
   } else {
     map.removeLayer(Terrain_CNBL);
   }
+  myFunctionLigendTerrain();
 }
 
 function Fun_Terrain_CND() {
@@ -518,6 +567,7 @@ function Fun_Terrain_CND() {
   } else {
     map.removeLayer(Terrain_CND);
   }
+  myFunctionLigendTerrain();
 }
 
 function Fun_Terrain_Convergence_Index() {
@@ -532,6 +582,7 @@ function Fun_Terrain_Convergence_Index() {
   } else {
     map.removeLayer(Terrain_Convergence_Index);
   }
+  myFunctionLigendTerrain();
 }
 
 function Fun_Terrain_Elevation() {
@@ -546,6 +597,7 @@ function Fun_Terrain_Elevation() {
   } else {
     map.removeLayer(Terrain_Elevation);
   }
+  myFunctionLigendTerrain();
 }
 
 function Fun_Terrain_LS_Factor() {
@@ -560,6 +612,7 @@ function Fun_Terrain_LS_Factor() {
   } else {
     map.removeLayer(Terrain_LS_Factor);
   }
+  myFunctionLigendTerrain();
 }
 
 function Fun_Terrain_MRRTF() {
@@ -574,6 +627,8 @@ function Fun_Terrain_MRRTF() {
   } else {
     map.removeLayer(Terrain_MRRTF);
   }
+  myFunctionLigendTerrain();
+
 }
 
 function Fun_Terrain_MRVBF() {
@@ -588,6 +643,8 @@ function Fun_Terrain_MRVBF() {
   } else {
     map.removeLayer(Terrain_MRVBF);
   }
+  myFunctionLigendTerrain();
+
 }
 
 function Fun_Terrain_Plan_Curvature() {
@@ -602,6 +659,7 @@ function Fun_Terrain_Plan_Curvature() {
   } else {
     map.removeLayer(Terrain_Plan_Curvature);
   }
+  myFunctionLigendTerrain();
 }
 
 function Fun_Terrain_Profile_Curvature() {
@@ -616,6 +674,7 @@ function Fun_Terrain_Profile_Curvature() {
   } else {
     map.removeLayer(Terrain_Profile_Curvature);
   }
+  myFunctionLigendTerrain();
 }
 
 function Fun_Terrain_RSP() {
@@ -630,6 +689,7 @@ function Fun_Terrain_RSP() {
   } else {
     map.removeLayer(Terrain_RSP);
   }
+  myFunctionLigendTerrain();
 }
 
 function Fun_Terrain_Slope() {
@@ -644,6 +704,7 @@ function Fun_Terrain_Slope() {
   } else {
     map.removeLayer(Terrain_Slope);
   }
+  myFunctionLigendTerrain();
 }
 
 function Fun_Terrain_Slope_Degree() {
@@ -658,6 +719,7 @@ function Fun_Terrain_Slope_Degree() {
   } else {
     map.removeLayer(Terrain_Slope_Degree);
   }
+  myFunctionLigendTerrain();
 }
 
 function Fun_Terrain_Slope_Percentrise() {
@@ -672,6 +734,7 @@ function Fun_Terrain_Slope_Percentrise() {
   } else {
     map.removeLayer(Terrain_Slope_Percentrise);
   }
+  myFunctionLigendTerrain();
 }
 
 function Fun_Terrain_Total_Catchment_Area() {
@@ -686,6 +749,7 @@ function Fun_Terrain_Total_Catchment_Area() {
   } else {
     map.removeLayer(Terrain_Total_Catchment_Area);
   }
+  myFunctionLigendTerrain();
 }
 
 function Fun_Terrain_TWI() {
@@ -700,7 +764,7 @@ function Fun_Terrain_TWI() {
   } else {
     map.removeLayer(Terrain_TWI);
   }
-  
+  myFunctionLigendTerrain();
 }
 
 function Fun_Terrain_Valley_Depth() {
@@ -715,6 +779,7 @@ function Fun_Terrain_Valley_Depth() {
   } else {
     map.removeLayer(Terrain_Valley_Depth);
   }
+  myFunctionLigendTerrain();
 }
 
 //SATELLITE FUNCTIONS
