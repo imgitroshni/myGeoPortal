@@ -418,6 +418,17 @@ var Terrain_Valley_Depth = new ol.layer.Tile({
 });
 Terrain_Valley_Depth.set("name", "Terrain_Valley_Depth");
 
+
+//HYDROLOGY ELEMENT
+
+var Natural_Drainage = new ol.layer.Tile({
+  source: new ol.source.TileWMS({
+    url: "http://localhost:8080/geoserver/wms",
+    params: { LAYERS: "NBSS_GeoServer_Hydrology:Natural_drainage" },
+  }),
+});
+
+
 //SATELLITE ELEMENT
 Gaya_Slope.set("name", "Gaya_Slope");
 
@@ -780,6 +791,23 @@ function Fun_Terrain_Valley_Depth() {
     map.removeLayer(Terrain_Valley_Depth);
   }
   myFunctionLigendTerrain();
+}
+
+//HYDROLOGY FUNCTIONS
+
+function Fun_Natural_Drainage() {
+  var checkBox = document.getElementById("myCheck_Natural_Drainage");
+  if (checkBox.checked == true) {
+    map.addLayer(Natural_Drainage);
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+  } else {
+    map.removeLayer(Natural_Drainage);
+  }
+  
 }
 
 //SATELLITE FUNCTIONS
