@@ -80,17 +80,44 @@ header{
 }
 
 .headerDiv{
+  display: flex;
+ justify-content: center;
+ align-content: center;
+  position: absolute;
+  z-index: 1;
+  top: -32px;
+  width: 100%;
+ 
+}
+
+.logos1{
+  
   display: grid;
+  align-content: center;
+  gap: 41px;
+  
+}
+.logos2{
+  display: grid;
+  align-content: center;
+  gap: 41px;
+  
+}
+.logo{
+  height: 80px; 
+  width: 80px;
+ 
+}
+.headerTextDiv{
+display: grid;
  justify-items: center;
  align-content: center;
  font-size: 32px;
  font-family: Georgia, serif;
  font-weight: bolder;
- position: absolute;
- z-index: 1;
 /*  background: rgba(0, 0, 0, 0.5); */
- height: 208px; width: 100%;
- top: -40px;
+ height: 208px; 
+ width: 100%;
  color: white;
  line-height: 1.6;
  text-transform: uppercase;
@@ -99,7 +126,7 @@ text-shadow:  0 0 3px #000000, 0 0 5px #000000;;
 }
 
 
-.headerDiv .span1{
+.headerTextDiv .span1{
  
   font-size: 40px;
   font-family: Georgia, serif;
@@ -110,7 +137,7 @@ text-shadow:  0 0 3px #000000, 0 0 5px #000000;;
 
  
 }
-.headerDiv .span2{
+.headerTextDiv .span2{
   font-size: 20px;
  font-family: Georgia, serif;
  text-transform: capitalize;
@@ -298,14 +325,14 @@ nav ul .dropdown:hover > .table {
 overflow: scroll; */
 }
 
-#queryHeaderDiv {
+#queryheaderTextDiv {
   background-color: midnightblue;
   height: 35px;
   padding-top: 6px;
   padding-left: 30px;
 }
 
-#queryHeaderDiv label {
+#queryheaderTextDiv label {
   color: white;
 }
 .attQueryDiv select {
@@ -432,22 +459,42 @@ overflow: scroll; */
   margin-left: 100px;
 }
 
+
+ 
+@media only screen and (max-width: 1380px) {
+
+  .headerTextDiv{
+   font-size: 28px;
+   height: 216px;
+  
+   
+  }
+  }
+
+  @media only screen and (max-width: 1280px) {
+
+    .headerTextDiv{
+     font-size: 25px;
+     height: 216px;
+    
+    }
+    }
 @media only screen and (max-width: 1120px) {
 
-  .headerDiv{
+  .headerTextDiv{
     
-   font-size: 25px;
+   font-size: 23px;
    height: 216px;
-   
+  
   }
   
   
-  .headerDiv .span1{
+  .headerTextDiv .span1{
    
     font-size: 30px;
     
   }
-  .headerDiv .span2{
+  .headerTextDiv .span2{
     font-size: 20px;
    
   }
@@ -571,6 +618,14 @@ overflow: scroll; */
   }
 }
 
+@media only screen and (max-width: 1000px) {
+
+  .headerTextDiv{
+    
+   font-size: 20px;
+   height: 216px;
+   
+  }}
 
 
 @media only screen and (max-width: 860px) {
@@ -579,7 +634,7 @@ overflow: scroll; */
     max-height: 200px;
     
   }
-  .headerDiv{
+  .headerTextDiv{
     
     font-size: 18px;
     height: 203px;
@@ -587,12 +642,12 @@ overflow: scroll; */
    }
    
    
-   .headerDiv .span1{
+   .headerTextDiv .span1{
     
      font-size: 20px;
      
    }
-   .headerDiv .span2{
+   .headerTextDiv .span2{
      font-size: 15px;
     
    }
@@ -625,24 +680,55 @@ overflow: scroll; */
     margin-left: 5px;
   }
 }
+@media only screen and (max-width: 800px) {
 
+  .headerTextDiv{
+    
+   font-size: 16px;
+   height: 216px;
+   margin-left: 12px;
+   margin-right:12px;
+   
+  }
+
+.logo{
+  height: 60px; 
+  width: 60px;
+}}
+  @media only screen and (max-width: 760px) {
+
+    .headerTextDiv{
+      
+     font-size: 14px;
+     height: 216px;
+     
+    }}
 @media only screen and (max-width: 650px) {
 
-  .headerDiv{
+  .headerTextDiv{
     
-    font-size: 14px;
-    height: 205px;
+    font-size: 12px;
+    
     top: -19px;
    }
    
    
-   .headerDiv .span1{
+   .headerTextDiv .span1{
     
      font-size: 20px;
      
    }
-   .headerDiv .span2{
+   .headerTextDiv .span2{
      font-size: 12px;
     
    }
   }
+
+  @media only screen and (max-width: 610px) {
+
+    .headerTextDiv{
+      
+     font-size: 10px;
+     
+     
+    }}
