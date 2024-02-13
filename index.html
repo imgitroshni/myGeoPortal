@@ -31,19 +31,49 @@
         style="height: 200px; width: 100%"
         alt=""
       />
-      <p class="headerDiv">
-        <span class="span1">Decision Support System </span>Spatial Watershed
-        Management Information System
-        <span class="span2">(Bihar PMKSY 2.0)</span>
-        
-      </p>
+      <div class="headerDiv">
+        <div class="logos1">
+          <img
+            src="./photos/ICAR Logo.jpg"
+            alt=""
+            class="logo"
+            
+          /><img
+            src="./photos/NBSS Logo.jpg"
+            alt=""
+            class="logo"
+            
+          />
+        </div>
+
+        <p class="headerTextDiv">
+          <span class="span1">Decision Support System </span>Spatial Watershed
+          Management Information System
+          <span class="span2">(Bihar PMKSY 2.0)</span>
+        </p>
+
+        <div class="logos2">
+          <img
+          src="./photos/Bihar Govt Logo.jpg"
+           
+            alt=""
+            class="logo"
+            
+          /><img
+          src="./photos/BWDS Logo.jpg"
+            alt=""
+            class="logo"
+            
+          />
+        </div>
+      </div>
     </header>
-    <marquee
-    loop="-1" Scrolldelay=10>Watershed analysis is used for the management and planning of natural
+    <marquee loop="-1" Scrolldelay="10"
+      >Watershed analysis is used for the management and planning of natural
       resource: To provide necessary inputs for hydrological modeling, Flood
-      prediction modeling and snow melt runoff models etc., Watershed
-      analysis provides catchment boundaries but also hydrological
-      parameters useful for management progress.
+      prediction modeling and snow melt runoff models etc., Watershed analysis
+      provides catchment boundaries but also hydrological parameters useful for
+      management progress.
     </marquee>
     <!-- <div><img src="./photos/home-bg.jpg" style="height: 200px; width: 100%;" alt=""></div> -->
     <div class="main">
@@ -368,7 +398,15 @@
                 ><b>Hydrology<span>&rsaquo;</span></b></a
               >
               <ul>
-                <li><a href="#">Water Bodies / River / Stream</a></li>
+                <li>
+                  <a href="#"
+                    ><input
+                      type="checkbox"
+                      id="myCheck_Natural_Drainage"
+                      onclick="Fun_Natural_Drainage()"
+                    />Water Bodies / River / Stream</a
+                  >
+                </li>
                 <li><a href="#">Stream Order</a></li>
                 <li class="dropdown2">
                   <a href="#">Ground Water <span>&rsaquo;</span></a>
@@ -547,7 +585,6 @@
             </div>
           </div>
         </nav>
-        
       </div>
 
       <div class="column right">
