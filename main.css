@@ -77,6 +77,7 @@ body, html {
 
 header{
   position: relative;
+ 
 }
 
 .headerDiv{
@@ -85,7 +86,7 @@ header{
  align-content: center;
   position: absolute;
   z-index: 1;
-  top: -32px;
+  top: -36px;
   width: 100%;
  
 }
@@ -94,19 +95,21 @@ header{
   
   display: grid;
   align-content: center;
-  gap: 41px;
-  
+  gap: 34px;
+  margin-left: 4px;
+ 
 }
 .logos2{
   display: grid;
   align-content: center;
-  gap: 41px;
-  
+  gap: 34px;
+  margin-right: 4px;
 }
 .logo{
   height: 80px; 
   width: 80px;
- 
+  
+  
 }
 .headerTextDiv{
 display: grid;
@@ -325,14 +328,17 @@ nav ul .dropdown:hover > .table {
 overflow: scroll; */
 }
 
-#queryheaderTextDiv {
+#queryHeaderDiv {
+  display: flex;
+  justify-content: center;
+  align-content: center;
   background-color: midnightblue;
   height: 35px;
-  padding-top: 6px;
-  padding-left: 30px;
+  
+ 
 }
 
-#queryheaderTextDiv label {
+#queryHeaderDiv label {
   color: white;
 }
 .attQueryDiv select {
@@ -387,7 +393,7 @@ overflow: scroll; */
 .multiAttQueryDiv {
   position: absolute;
   margin: 50px auto auto -94px;
-  width: 250px;
+  width: 700px;
   background-color: rgb(255, 255, 255, 0.9);
   font-family: inherit;
   font-size: 1em;
@@ -397,6 +403,9 @@ overflow: scroll; */
   box-shadow: 0px 0px 15px rgba(252 213, 213, 0.5);
   display: none;
   
+}
+.selectBoxes{
+  display: flex;
 }
 
 .multiAttQueryDiv select {
@@ -426,6 +435,12 @@ overflow: scroll; */
   font-weight: bold;
 }
 
+.smallButtons{
+display: flex;
+justify-content: center;
+gap: 100px;
+margin-bottom: 8px;
+}
 .attQryRun2 {
   color: white;
   background-color: green;
@@ -433,21 +448,10 @@ overflow: scroll; */
   border: 1px solid darkgreen;
   height: 35px;
   width: 50px;
-  margin: 10px;
+  
 }
 
-.attQryAdd {
-  color: white;
-  background-color: midnightblue;
-  border-radius: 3px;
-  border: 1px solid darkgreen;
-  height: 25px;
-  width: 35px;
-  font-size: 11px;
-  font: bolder;
-  margin: 5px;
-  margin-left: 100px;
-}
+
 .attQryClear2 {
   color: white;
   background-color: rgb(236, 98, 18);
@@ -455,24 +459,32 @@ overflow: scroll; */
   border: 1px solid rgb(236, 98, 18);
   height: 35px;
   width: 50px;
-  margin: 5px;
-  margin-left: 100px;
+  
+ 
 }
 
 
  
 @media only screen and (max-width: 1380px) {
-
+ 
   .headerTextDiv{
    font-size: 28px;
    height: 216px;
   
    
   }
+
+  
+  
   }
 
   @media only screen and (max-width: 1280px) {
-
+    .headerDiv{
+   
+      top: -32px;
+      
+     
+    }
     .headerTextDiv{
      font-size: 25px;
      height: 216px;
@@ -480,7 +492,12 @@ overflow: scroll; */
     }
     }
 @media only screen and (max-width: 1120px) {
-
+  .headerDiv{
+   
+    top: -32px;
+    
+   
+  }
   .headerTextDiv{
     
    font-size: 23px;
@@ -619,7 +636,12 @@ overflow: scroll; */
 }
 
 @media only screen and (max-width: 1000px) {
-
+  .headerDiv{
+   
+    top: -28px;
+    
+   
+  }
   .headerTextDiv{
     
    font-size: 20px;
@@ -629,6 +651,12 @@ overflow: scroll; */
 
 
 @media only screen and (max-width: 860px) {
+  .headerDiv{
+   
+    top: -20px;
+    
+   
+  }
   .class_Legend {
     max-width: 180px;
     max-height: 200px;
@@ -705,6 +733,8 @@ overflow: scroll; */
     }}
 @media only screen and (max-width: 650px) {
 
+
+  
   .headerTextDiv{
     
     font-size: 12px;
