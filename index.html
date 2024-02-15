@@ -34,15 +34,15 @@
       <div class="headerDiv">
         <div class="logos1">
           <img
-            src="./photos/ICAR Logo.jpg"
+            src="./photos/ICAR Logo.png"
             alt=""
             class="logo"
-            
+            style="border-radius: 100%;background-color: rgba(255, 255, 255, 0.5);"
           /><img
-            src="./photos/NBSS Logo.jpg"
+            src="./photos/NBSS Logo.png"
             alt=""
             class="logo"
-            
+           
           />
         </div>
 
@@ -54,13 +54,12 @@
 
         <div class="logos2">
           <img
-          src="./photos/Bihar Govt Logo.jpg"
-           
+          src="./photos/Bihar Govt Logo.png"
             alt=""
             class="logo"
-            
+            style="border-radius: 20%;background-color: rgba(255, 255, 255, 0.5);"
           /><img
-          src="./photos/BWDS Logo.jpg"
+          src="./photos/BWDS Logo.png"
             alt=""
             class="logo"
             
@@ -548,24 +547,56 @@
                         <label for="">Multiple Attribute Query</label>
                       </div>
                       <br />
+                      <div class="selectBoxes">
                       <label for="">Select Layer</label>
-                      <select name="selectLayer" id="selectLayer2"></select
-                      ><br /><br />
+                      <select name="selectLayer" id="multiSelectLayer1"></select
+                      >
 
                       <label for="">Select Attribute</label>
                       <select
                         name="selectAttribute"
-                        id="selectAttribute2"
+                        id="multiSelectAttribute1"
                       ></select
-                      ><br />
-                      <button type="button" id="attQryAdd" class="attQryAdd">
-                        Add</button
-                      ><br />
+                      ></div>
+                      <div class="selectBoxes">
+                        <label for="">Select Layer</label>
+                        <select name="selectLayer" id="multiSelectLayer2"></select
+                        >
+  
+                        <label for="">Select Attribute</label>
+                        <select
+                          name="selectAttribute"
+                          id="multiSelectAttribute2"
+                        ></select
+                        ></div>
+                        <div class="selectBoxes">
+                        <label for="">Select Layer</label>
+                        <select name="selectLayer" id="multiSelectLayer3"></select
+                        >
+  
+                        <label for="">Select Attribute</label>
+                        <select
+                          name="selectAttribute"
+                          id="multiSelectAttribute3"
+                        ></select
+                        ></div>
+                        <div class="selectBoxes">
+                          <label for="">Select Layer</label>
+                          <select name="selectLayer" id="multiSelectLayer4"></select
+                          >
+    
+                          <label for="">Select Attribute</label>
+                          <select
+                            name="selectAttribute"
+                            id="multiSelectAttribute4"
+                          ></select
+                          ></div><br/>
+                      <div class="smallButtons">
                       <button
                         type="button"
                         id="attQryRun2"
                         class="attQryRun2"
-                        onclick="multiQueryRun()"
+                        onclick="multiQuery1()"
                       >
                         Run
                       </button>
@@ -578,6 +609,7 @@
                       >
                         Clear
                       </button>
+                    </div>
                     </div>
                   </div>
                 </div>
