@@ -232,7 +232,6 @@ document.addEventListener(
   true
 );
 
-
 //BASEMAP ELEMENTS
 var Gaya_TMU = new ol.layer.Tile({
   source: new ol.source.TileWMS({
@@ -418,7 +417,6 @@ var Terrain_Valley_Depth = new ol.layer.Tile({
 });
 Terrain_Valley_Depth.set("name", "Terrain_Valley_Depth");
 
-
 //HYDROLOGY ELEMENT
 
 var Natural_Drainage = new ol.layer.Tile({
@@ -427,7 +425,6 @@ var Natural_Drainage = new ol.layer.Tile({
     params: { LAYERS: "NBSS_GeoServer_Hydrology:Natural_drainage" },
   }),
 });
-
 
 //SATELLITE ELEMENT
 Gaya_Slope.set("name", "Gaya_Slope");
@@ -490,7 +487,6 @@ function Fun_Gaya_Slope() {
   var checkBox = document.getElementById("myCheck_Gaya_Slope");
   if (checkBox.checked == true) {
     map.addLayer(Gaya_Slope);
-    
 
     //Gaya_Slope.getSource().updateParams({'cql_filter':"Slope='2'"});alert(1);
 
@@ -507,7 +503,9 @@ function Fun_Gaya_Slope() {
 //TERRAIN FUNCTIONS
 
 function Fun_Terrain_Analytical_Hillshading() {
-  var checkBox = document.getElementById("myCheck_Terrain_Analytical_Hillshading");
+  var checkBox = document.getElementById(
+    "myCheck_Terrain_Analytical_Hillshading"
+  );
   if (checkBox.checked == true) {
     map.addLayer(Terrain_Analytical_Hillshading);
 
@@ -639,7 +637,6 @@ function Fun_Terrain_MRRTF() {
     map.removeLayer(Terrain_MRRTF);
   }
   myFunctionLigendTerrain();
-
 }
 
 function Fun_Terrain_MRVBF() {
@@ -655,7 +652,6 @@ function Fun_Terrain_MRVBF() {
     map.removeLayer(Terrain_MRVBF);
   }
   myFunctionLigendTerrain();
-
 }
 
 function Fun_Terrain_Plan_Curvature() {
@@ -749,7 +745,9 @@ function Fun_Terrain_Slope_Percentrise() {
 }
 
 function Fun_Terrain_Total_Catchment_Area() {
-  var checkBox = document.getElementById("myCheck_Terrain_Total_Catchment_Area");
+  var checkBox = document.getElementById(
+    "myCheck_Terrain_Total_Catchment_Area"
+  );
   if (checkBox.checked == true) {
     map.addLayer(Terrain_Total_Catchment_Area);
 
@@ -807,7 +805,6 @@ function Fun_Natural_Drainage() {
   } else {
     map.removeLayer(Natural_Drainage);
   }
-  
 }
 
 //SATELLITE FUNCTIONS
@@ -824,7 +821,6 @@ function Fun_Gaya_Satellite() {
     map.removeLayer(Gaya_Satellite);
   }
 }
-
 
 //MAP SWITCHER FUNCTIONS
 function Fun_Hybrid() {
@@ -1049,38 +1045,131 @@ function addToSelectAttribute(arr) {
 //END single layer olptions
 
 //START multi layer olptions
-let selectLayer2 = document.getElementById("selectLayer2");
-let selectAttribute2 = document.getElementById("selectAttribute2");
+let multiSelectLayer1 = document.getElementById("multiSelectLayer1");
+let multiSelectAttribute1 = document.getElementById("multiSelectAttribute1");
+let multiSelectLayer2 = document.getElementById("multiSelectLayer2");
+let multiSelectAttribute2 = document.getElementById("multiSelectAttribute2");
+let multiSelectLayer3 = document.getElementById("multiSelectLayer3");
+let multiSelectAttribute3 = document.getElementById("multiSelectAttribute3");
+let multiSelectLayer4 = document.getElementById("multiSelectLayer4");
+let multiSelectAttribute4 = document.getElementById("multiSelectAttribute4");
 
 layerOption.forEach(function addLayerOption(item) {
   let option = document.createElement("option");
   option.text = item;
   option.value = item;
-  selectLayer2.appendChild(option);
+  multiSelectLayer1.appendChild(option);
+});
+layerOption.forEach(function addLayerOption(item) {
+  let option = document.createElement("option");
+  option.text = item;
+  option.value = item;
+  multiSelectLayer2.appendChild(option);
+});
+layerOption.forEach(function addLayerOption(item) {
+  let option = document.createElement("option");
+  option.text = item;
+  option.value = item;
+  multiSelectLayer3.appendChild(option);
+});
+layerOption.forEach(function addLayerOption(item) {
+  let option = document.createElement("option");
+  option.text = item;
+  option.value = item;
+  multiSelectLayer4.appendChild(option);
 });
 
-selectLayer2.onchange = function () {
-  selectAttribute2.innerHTML = "<option></option>";
+multiSelectLayer1.onchange = function () {
+  multiSelectAttribute1.innerHTML = "<option></option>";
   if (this.value == "Gaya TMU") {
-    addToSelectAttribute2(tmuLegends);
+    addTomultiSelectAttribute1(tmuLegends);
   }
   if (this.value == "Gaya Landform") {
-    addToSelectAttribute2(landFormLegends);
+    addTomultiSelectAttribute1(landFormLegends);
   }
   if (this.value == "Gaya Landuse") {
-    addToSelectAttribute2(landUseLegends);
+    addTomultiSelectAttribute1(landUseLegends);
   }
   if (this.value == "Gaya Slope") {
-    addToSelectAttribute2(slopeLegends);
+    addTomultiSelectAttribute1(slopeLegends);
+  }
+};
+multiSelectLayer2.onchange = function () {
+  multiSelectAttribute2.innerHTML = "<option></option>";
+  if (this.value == "Gaya TMU") {
+    addTomultiSelectAttribute2(tmuLegends);
+  }
+  if (this.value == "Gaya Landform") {
+    addTomultiSelectAttribute2(landFormLegends);
+  }
+  if (this.value == "Gaya Landuse") {
+    addTomultiSelectAttribute2(landUseLegends);
+  }
+  if (this.value == "Gaya Slope") {
+    addTomultiSelectAttribute2(slopeLegends);
+  }
+};
+multiSelectLayer3.onchange = function () {
+  multiSelectAttribute3.innerHTML = "<option></option>";
+  if (this.value == "Gaya TMU") {
+    addTomultiSelectAttribute3(tmuLegends);
+  }
+  if (this.value == "Gaya Landform") {
+    addTomultiSelectAttribute3(landFormLegends);
+  }
+  if (this.value == "Gaya Landuse") {
+    addTomultiSelectAttribute3(landUseLegends);
+  }
+  if (this.value == "Gaya Slope") {
+    addTomultiSelectAttribute3(slopeLegends);
+  }
+};
+multiSelectLayer4.onchange = function () {
+  multiSelectAttribute4.innerHTML = "<option></option>";
+  if (this.value == "Gaya TMU") {
+    addTomultiSelectAttribute4(tmuLegends);
+  }
+  if (this.value == "Gaya Landform") {
+    addTomultiSelectAttribute4(landFormLegends);
+  }
+  if (this.value == "Gaya Landuse") {
+    addTomultiSelectAttribute4(landUseLegends);
+  }
+  if (this.value == "Gaya Slope") {
+    addTomultiSelectAttribute4(slopeLegends);
   }
 };
 
-function addToSelectAttribute2(arr) {
+function addTomultiSelectAttribute1(arr) {
   arr.forEach(function (item) {
     let option = document.createElement("option");
     option.text = item;
     option.value = item;
-    selectAttribute2.appendChild(option);
+    multiSelectAttribute1.appendChild(option);
+  });
+}
+function addTomultiSelectAttribute2(arr) {
+  arr.forEach(function (item) {
+    let option = document.createElement("option");
+    option.text = item;
+    option.value = item;
+    multiSelectAttribute2.appendChild(option);
+  });
+}
+function addTomultiSelectAttribute3(arr) {
+  arr.forEach(function (item) {
+    let option = document.createElement("option");
+    option.text = item;
+    option.value = item;
+    multiSelectAttribute3.appendChild(option);
+  });
+}
+function addTomultiSelectAttribute4(arr) {
+  arr.forEach(function (item) {
+    let option = document.createElement("option");
+    option.text = item;
+    option.value = item;
+    multiSelectAttribute4.appendChild(option);
   });
 }
 //END multi layer olptions
@@ -1155,13 +1244,13 @@ function singleQueryRun() {
 
 //START MULTi LAYER QUERY
 
-function multiQueryRun() {
-  if (selectLayer2.value == "Gaya TMU") {
-    map.removeLayer(Gaya_TMU);
+function multiQuery1() {
+  if (multiSelectLayer1.value == "Gaya TMU") {
+    clearLayers();
     map.addLayer(Gaya_TMU);
 
     Gaya_TMU.getSource().updateParams({
-      cql_filter: "TMUEdit2='" + selectAttribute2.value + "'",
+      cql_filter: "TMUEdit2='" + multiSelectAttribute1.value + "'",
     });
 
     map
@@ -1171,12 +1260,12 @@ function multiQueryRun() {
 
     myFunctionLigend();
   }
-  if (selectLayer2.value == "Gaya Landform") {
-    map.removeLayer(Gaya_Landform);
+  if (multiSelectLayer1.value == "Gaya Landform") {
+    clearLayers();
     map.addLayer(Gaya_Landform);
 
     Gaya_Landform.getSource().updateParams({
-      cql_filter: "Landform='" + selectAttribute2.value + "'",
+      cql_filter: "Landform='" + multiSelectAttribute1.value + "'",
     });
 
     map
@@ -1186,13 +1275,139 @@ function multiQueryRun() {
 
     myFunctionLigend();
   }
-  if (selectLayer2.value == "Gaya Landuse") {
-    map.removeLayer(Gaya_Landuse);
+  if (multiSelectLayer1.value == "Gaya Landuse") {
+    clearLayers();
+    map.addLayer(Gaya_Landuse);
+
+    Gaya_Landuse.getSource().updateParams({
+      cql_filter: "Landuse='" + multiSelectAttribute1.value + "'",
+    });
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+
+    myFunctionLigend();
+  }
+
+  if (multiSelectLayer1.value == "Gaya Slope") {
+    clearLayers();
+    map.addLayer(Gaya_Slope);
+
+    Gaya_Slope.getSource().updateParams({
+      cql_filter: "Slope='" + multiSelectAttribute1.value + "'",
+    });
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+
+    myFunctionLigend();
+  }
+}
+function multiQuery2() {
+  if (multiSelectLayer2.value == "Gaya TMU") {
+    clearLayers();
+    map.addLayer(Gaya_TMU);
+
+    Gaya_TMU.getSource().updateParams({
+      cql_filter: "TMUEdit2='" + multiSelectAttribute2.value + "'",
+    });
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+
+    myFunctionLigend();
+  }
+  if (multiSelectLayer2.value == "Gaya Landform") {
+    clearLayers();
+    map.addLayer(Gaya_Landform);
+
+    Gaya_Landform.getSource().updateParams({
+      cql_filter: "Landform='" + multiSelectAttribute2.value + "'",
+    });
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+
+    myFunctionLigend();
+  }
+  if (multiSelectLayer2.value == "Gaya Landuse") {
+    clearLayers();
+    map.addLayer(Gaya_Landuse);
+
+    Gaya_Landuse.getSource().updateParams({
+      cql_filter: "Landuse='" + multiSelectAttribute2.value + "'",
+    });
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+
+    myFunctionLigend();
+  }
+
+  if (multiSelectLayer2.value == "Gaya Slope") {
+    clearLayers();
+    map.addLayer(Gaya_Slope);
+
+    Gaya_Slope.getSource().updateParams({
+      cql_filter: "Slope='" + multiSelectAttribute2.value + "'",
+    });
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+
+    myFunctionLigend();
+  }
+}
+function multiQuery3() {
+  if (multiSelectLayer3.value == "Gaya TMU") {
+    clearLayers();
+    map.addLayer(Gaya_TMU);
+
+    Gaya_TMU.getSource().updateParams({
+      cql_filter: "TMUEdit2='" + multiSelectAttribute3.value + "'",
+    });
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+
+    myFunctionLigend();
+  }
+  if (multiSelectLayer3.value == "Gaya Landform") {
+    clearLayers();
+    map.addLayer(Gaya_Landform);
+
+    Gaya_Landform.getSource().updateParams({
+      cql_filter: "Landform='" + multiSelectAttribute3.value + "'",
+    });
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+
+    myFunctionLigend();
+  }
+  if (multiSelectLayer3.value == "Gaya Landuse") {
+    clearLayers();
 
     map.addLayer(Gaya_Landuse);
 
     Gaya_Landuse.getSource().updateParams({
-      cql_filter: "Landuse='" + selectAttribute2.value + "'",
+      cql_filter: "Landuse='" + multiSelectAttribute3.value + "'",
     });
 
     map
@@ -1203,12 +1418,12 @@ function multiQueryRun() {
     myFunctionLigend();
   }
 
-  if (selectLayer2.value == "Gaya Slope") {
-    map.removeLayer(Gaya_Slope);
+  if (multiSelectLayer3.value == "Gaya Slope") {
+    clearLayers();
     map.addLayer(Gaya_Slope);
 
     Gaya_Slope.getSource().updateParams({
-      cql_filter: "Slope='" + selectAttribute2.value + "'",
+      cql_filter: "Slope='" + multiSelectAttribute3.value + "'",
     });
 
     map
@@ -1218,6 +1433,79 @@ function multiQueryRun() {
 
     myFunctionLigend();
   }
+}
+
+function multiQuery4() {
+  if (multiSelectLayer4.value == "Gaya TMU") {
+    clearLayers();
+    map.addLayer(Gaya_TMU);
+
+    Gaya_TMU.getSource().updateParams({
+      cql_filter: "TMUEdit2='" + multiSelectAttribute4.value + "'",
+    });
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+
+    myFunctionLigend();
+  }
+  if (multiSelectLayer4.value == "Gaya Landform") {
+    clearLayers();
+    map.addLayer(Gaya_Landform);
+
+    Gaya_Landform.getSource().updateParams({
+      cql_filter: "Landform='" + multiSelectAttribute4.value + "'",
+    });
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+
+    myFunctionLigend();
+  }
+  if (multiSelectLayer4.value == "Gaya Landuse") {
+    clearLayers();
+    map.addLayer(Gaya_Landuse);
+
+    Gaya_Landuse.getSource().updateParams({
+      cql_filter: "Landuse='" + multiSelectAttribute4.value + "'",
+    });
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+
+    myFunctionLigend();
+  }
+
+  if (multiSelectLayer4.value == "Gaya Slope") {
+    clearLayers();
+    map.addLayer(Gaya_Slope);
+
+    Gaya_Slope.getSource().updateParams({
+      cql_filter: "Slope='" + multiSelectAttribute4.value + "'",
+    });
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+
+    myFunctionLigend();
+  }
+}
+
+function multiQueryRun() {
+  return map.removeLayer(
+    multiQuery1(true) &&
+      multiQuery2(true) &&
+      multiQuery3(true) &&
+      multiQuery4(true)
+  );
 }
 
 //END MULTi LAYER QUERY
@@ -1283,7 +1571,6 @@ function MultiQueryBoxShowOrHide() {
   }
 }
 
-
 const navbarContainer = document.querySelector("#navbar");
 
 function navbarShowOrHide() {
@@ -1293,7 +1580,7 @@ function navbarShowOrHide() {
     isClick = false;
   } else {
     navbarContainer.style.display = "block";
-    
+
     isClick = true;
   }
 }
