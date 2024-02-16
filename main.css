@@ -130,18 +130,18 @@ text-shadow:  0 0 3px #000000, 0 0 5px #000000;;
 
 
 .headerTextDiv .span1{
- 
-  font-size: 40px;
+  text-align: center;
+  font-size: 35px;
   font-family: Georgia, serif;
 
- 
+  line-height: 1.2;
  text-transform: capitalize;
  color: rgb(245, 121, 5);
 
  
 }
 .headerTextDiv .span2{
-  font-size: 20px;
+  font-size: 28px;
  font-family: Georgia, serif;
  text-transform: capitalize;
   
@@ -392,7 +392,7 @@ overflow: scroll; */
 
 .multiAttQueryDiv {
   position: absolute;
-  margin: 50px auto auto -94px;
+  margin: 10px auto auto -94px;
   width: 700px;
   background-color: rgb(255, 255, 255, 0.9);
   font-family: inherit;
@@ -410,6 +410,7 @@ overflow: scroll; */
 
 .multiAttQueryDiv select {
   width: 225px;
+  font-size: small;
   height: 35px;
   border: 1px solid lightgray;
   border-radius: 3px;
@@ -508,7 +509,7 @@ margin-bottom: 8px;
   
   .headerTextDiv .span1{
    
-    font-size: 30px;
+    font-size: 25px;
     
   }
   .headerTextDiv .span2{
@@ -606,15 +607,20 @@ margin-bottom: 8px;
   }
   
   .multiAttQueryDiv {
-    margin: 10px auto auto 120px;
-  
-    width: 225px;
+    margin: 10px auto auto 10px;
+    width: 390px;
+    height: 230px;
     font-size: 0.8em;
   }
   
+  .multiAttQueryDiv label {
+    font-size: 10px;
+   
+  }
   .multiAttQueryDiv select {
-    width: 200px;
+    width: 90px;
     height: 25px;
+    font-size: 10px;
   }
   
   .attQryRun2 {
@@ -745,7 +751,7 @@ margin-bottom: 8px;
    
    .headerTextDiv .span1{
     
-     font-size: 20px;
+     font-size: 15px;
      
    }
    .headerTextDiv .span2{
