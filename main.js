@@ -1044,8 +1044,77 @@ function addToSelectAttribute(arr) {
 
 //END single layer olptions
 
+//START SINGLE LAYER QUERY
+
+function singleQueryRun() {
+  if (selectLayer.value == "Gaya TMU") {
+    clearLayers();
+    map.addLayer(Gaya_TMU);
+
+    Gaya_TMU.getSource().updateParams({
+      cql_filter: "TMUEdit2='" + selectAttribute.value + "'",
+    });
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+
+    myFunctionLigend();
+  }
+  if (selectLayer.value == "Gaya Landform") {
+    clearLayers();
+    map.addLayer(Gaya_Landform);
+
+    Gaya_Landform.getSource().updateParams({
+      cql_filter: "Landform='" + selectAttribute.value + "'",
+    });
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+
+    myFunctionLigend();
+  }
+  if (selectLayer.value == "Gaya Landuse") {
+    clearLayers();
+    map.addLayer(Gaya_Landuse);
+
+    Gaya_Landuse.getSource().updateParams({
+      cql_filter: "Landuse='" + selectAttribute.value + "'",
+    });
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+
+    myFunctionLigend();
+  }
+
+  if (selectLayer.value == "Gaya Slope") {
+    clearLayers();
+    map.addLayer(Gaya_Slope);
+
+    Gaya_Slope.getSource().updateParams({
+      cql_filter: "Slope='" + selectAttribute.value + "'",
+    });
+
+    map
+      .getView()
+      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
+    map.getView().setZoom(12);
+
+    myFunctionLigend();
+  }
+}
+
+//END SINGLE LAYER QUERY
+
+
 //START multi layer olptions
-let multiSelectLayer1 = document.getElementById("multiSelectLayer1");
+/* let multiSelectLayer1 = document.getElementById("multiSelectLayer1");
 let multiSelectAttribute1 = document.getElementById("multiSelectAttribute1");
 let multiSelectLayer2 = document.getElementById("multiSelectLayer2");
 let multiSelectAttribute2 = document.getElementById("multiSelectAttribute2");
@@ -1171,82 +1240,82 @@ function addTomultiSelectAttribute4(arr) {
     option.value = item;
     multiSelectAttribute4.appendChild(option);
   });
+} */
+// Option Creation
+function addLayerOptions(selectElement) {
+  layerOption.forEach(function(item) {
+    let option = document.createElement("option");
+    option.text = item;
+    option.value = item;
+    selectElement.appendChild(option);
+  });
 }
+
+addLayerOptions(multiSelectLayer1);
+addLayerOptions(multiSelectLayer2);
+addLayerOptions(multiSelectLayer3);
+addLayerOptions(multiSelectLayer4);
+
+// Event Handling
+function handleLayerChange(multiSelectLayer, multiSelectAttribute) {
+  multiSelectLayer.onchange = function() {
+    multiSelectAttribute.innerHTML = "<option></option>";
+    let legends = [];
+
+    switch (this.value) {
+      case "Gaya TMU":
+        legends = tmuLegends;
+        break;
+      case "Gaya Landform":
+        legends = landFormLegends;
+        break;
+      case "Gaya Landuse":
+        legends = landUseLegends;
+        break;
+      case "Gaya Slope":
+        legends = slopeLegends;
+        break;
+    }
+
+    legends.forEach(function(item) {
+      let option = document.createElement("option");
+      option.text = item;
+      option.value = item;
+      multiSelectAttribute.appendChild(option);
+    });
+  };
+}
+
+handleLayerChange(multiSelectLayer1, multiSelectAttribute1);
+handleLayerChange(multiSelectLayer2, multiSelectAttribute2);
+handleLayerChange(multiSelectLayer3, multiSelectAttribute3);
+handleLayerChange(multiSelectLayer4, multiSelectAttribute4);
 //END multi layer olptions
 
-//START SINGLE LAYER QUERY
 
-function singleQueryRun() {
-  if (selectLayer.value == "Gaya TMU") {
-    clearLayers();
-    map.addLayer(Gaya_TMU);
 
-    Gaya_TMU.getSource().updateParams({
-      cql_filter: "TMUEdit2='" + selectAttribute.value + "'",
-    });
+//START MULTi LAYER QUERY
+function multiQueryRun() {
+  
 
-    map
-      .getView()
-      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
-    map.getView().setZoom(12);
-
-    myFunctionLigend();
+  if (multiSelectLayer1.value) {
+    multiQuery1();
   }
-  if (selectLayer.value == "Gaya Landform") {
-    clearLayers();
-    map.addLayer(Gaya_Landform);
-
-    Gaya_Landform.getSource().updateParams({
-      cql_filter: "Landform='" + selectAttribute.value + "'",
-    });
-
-    map
-      .getView()
-      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
-    map.getView().setZoom(12);
-
-    myFunctionLigend();
+  if (multiSelectLayer2.value) {
+    multiQuery2();
   }
-  if (selectLayer.value == "Gaya Landuse") {
-    clearLayers();
-    map.addLayer(Gaya_Landuse);
-
-    Gaya_Landuse.getSource().updateParams({
-      cql_filter: "Landuse='" + selectAttribute.value + "'",
-    });
-
-    map
-      .getView()
-      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
-    map.getView().setZoom(12);
-
-    myFunctionLigend();
+  if (multiSelectLayer3.value) {
+    multiQuery3();
   }
-
-  if (selectLayer.value == "Gaya Slope") {
-    clearLayers();
-    map.addLayer(Gaya_Slope);
-
-    Gaya_Slope.getSource().updateParams({
-      cql_filter: "Slope='" + selectAttribute.value + "'",
-    });
-
-    map
-      .getView()
-      .setCenter(ol.proj.transform([85.28, 24.56], "EPSG:4326", "EPSG:3857"));
-    map.getView().setZoom(12);
-
-    myFunctionLigend();
+  if (multiSelectLayer4.value) {
+    multiQuery4();
   }
 }
 
-//END SINGLE LAYER QUERY
 
-//START MULTi LAYER QUERY
-
-function multiQuery1() {
+ function multiQuery1() {
   if (multiSelectLayer1.value == "Gaya TMU") {
-    clearLayers();
+    map.removeLayer(Gaya_TMU);
     map.addLayer(Gaya_TMU);
 
     Gaya_TMU.getSource().updateParams({
@@ -1261,7 +1330,7 @@ function multiQuery1() {
     myFunctionLigend();
   }
   if (multiSelectLayer1.value == "Gaya Landform") {
-    clearLayers();
+    map.removeLayer(Gaya_Landform);
     map.addLayer(Gaya_Landform);
 
     Gaya_Landform.getSource().updateParams({
@@ -1276,7 +1345,7 @@ function multiQuery1() {
     myFunctionLigend();
   }
   if (multiSelectLayer1.value == "Gaya Landuse") {
-    clearLayers();
+    map.removeLayer(Gaya_Landuse);
     map.addLayer(Gaya_Landuse);
 
     Gaya_Landuse.getSource().updateParams({
@@ -1292,7 +1361,7 @@ function multiQuery1() {
   }
 
   if (multiSelectLayer1.value == "Gaya Slope") {
-    clearLayers();
+    
     map.addLayer(Gaya_Slope);
 
     Gaya_Slope.getSource().updateParams({
@@ -1306,10 +1375,11 @@ function multiQuery1() {
 
     myFunctionLigend();
   }
+  return true;
 }
 function multiQuery2() {
   if (multiSelectLayer2.value == "Gaya TMU") {
-    clearLayers();
+    map.removeLayer(Gaya_TMU);
     map.addLayer(Gaya_TMU);
 
     Gaya_TMU.getSource().updateParams({
@@ -1324,7 +1394,7 @@ function multiQuery2() {
     myFunctionLigend();
   }
   if (multiSelectLayer2.value == "Gaya Landform") {
-    clearLayers();
+    map.removeLayer(Gaya_Landform);
     map.addLayer(Gaya_Landform);
 
     Gaya_Landform.getSource().updateParams({
@@ -1339,7 +1409,7 @@ function multiQuery2() {
     myFunctionLigend();
   }
   if (multiSelectLayer2.value == "Gaya Landuse") {
-    clearLayers();
+    map.removeLayer(Gaya_Landuse);
     map.addLayer(Gaya_Landuse);
 
     Gaya_Landuse.getSource().updateParams({
@@ -1355,7 +1425,7 @@ function multiQuery2() {
   }
 
   if (multiSelectLayer2.value == "Gaya Slope") {
-    clearLayers();
+    
     map.addLayer(Gaya_Slope);
 
     Gaya_Slope.getSource().updateParams({
@@ -1369,10 +1439,11 @@ function multiQuery2() {
 
     myFunctionLigend();
   }
+  return true;
 }
 function multiQuery3() {
   if (multiSelectLayer3.value == "Gaya TMU") {
-    clearLayers();
+    map.removeLayer(Gaya_TMU);
     map.addLayer(Gaya_TMU);
 
     Gaya_TMU.getSource().updateParams({
@@ -1387,7 +1458,7 @@ function multiQuery3() {
     myFunctionLigend();
   }
   if (multiSelectLayer3.value == "Gaya Landform") {
-    clearLayers();
+    map.removeLayer(Gaya_Landform);
     map.addLayer(Gaya_Landform);
 
     Gaya_Landform.getSource().updateParams({
@@ -1402,8 +1473,8 @@ function multiQuery3() {
     myFunctionLigend();
   }
   if (multiSelectLayer3.value == "Gaya Landuse") {
-    clearLayers();
-
+    
+    map.removeLayer(Gaya_Landuse);
     map.addLayer(Gaya_Landuse);
 
     Gaya_Landuse.getSource().updateParams({
@@ -1419,7 +1490,7 @@ function multiQuery3() {
   }
 
   if (multiSelectLayer3.value == "Gaya Slope") {
-    clearLayers();
+    
     map.addLayer(Gaya_Slope);
 
     Gaya_Slope.getSource().updateParams({
@@ -1433,11 +1504,12 @@ function multiQuery3() {
 
     myFunctionLigend();
   }
+  return true;
 }
 
 function multiQuery4() {
   if (multiSelectLayer4.value == "Gaya TMU") {
-    clearLayers();
+    map.removeLayer(Gaya_TMU);
     map.addLayer(Gaya_TMU);
 
     Gaya_TMU.getSource().updateParams({
@@ -1452,7 +1524,7 @@ function multiQuery4() {
     myFunctionLigend();
   }
   if (multiSelectLayer4.value == "Gaya Landform") {
-    clearLayers();
+    map.removeLayer(Gaya_Landform);
     map.addLayer(Gaya_Landform);
 
     Gaya_Landform.getSource().updateParams({
@@ -1467,7 +1539,7 @@ function multiQuery4() {
     myFunctionLigend();
   }
   if (multiSelectLayer4.value == "Gaya Landuse") {
-    clearLayers();
+    map.removeLayer(Gaya_Landuse);
     map.addLayer(Gaya_Landuse);
 
     Gaya_Landuse.getSource().updateParams({
@@ -1483,7 +1555,7 @@ function multiQuery4() {
   }
 
   if (multiSelectLayer4.value == "Gaya Slope") {
-    clearLayers();
+    
     map.addLayer(Gaya_Slope);
 
     Gaya_Slope.getSource().updateParams({
@@ -1497,16 +1569,16 @@ function multiQuery4() {
 
     myFunctionLigend();
   }
+  return true;
 }
 
 function multiQueryRun() {
-  return map.removeLayer(
-    multiQuery1(true) &&
-      multiQuery2(true) &&
-      multiQuery3(true) &&
-      multiQuery4(true)
-  );
-}
+  return multiQuery1() &&
+         multiQuery2() &&
+         multiQuery3() &&
+         multiQuery4();
+} 
+
 
 //END MULTi LAYER QUERY
 
